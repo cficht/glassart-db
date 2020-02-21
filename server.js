@@ -20,6 +20,8 @@ const PORT = process.env.PORT;
 app.use(morgan('dev'));
 app.use(cors());
 
+app.use('/assets', express.static('public'));
+
 // API Routes
 
 app.get('/api/data', async (req, res) => {
