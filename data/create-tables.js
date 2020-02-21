@@ -19,7 +19,16 @@ async function run() {
     
         // run a query to create tables
         await client.query(`
-          
+        CREATE TABLE glass_art (
+            product_id INTEGER PRIMARY KEY NOT NULL,
+            product_name VARCHAR(256) NOT NULL,
+            description VARCHAR(256) NOT NULL,
+            price INTEGER NOT NULL,
+            img_url VARCHAR(256) NOT NULL,
+            type VARCHAR(256) NOT NULL,
+            in_stock BOOLEAN NOT NULL,
+            quantity INTEGER NOT NULL
+        );
         `);
 
         console.log('create tables complete');

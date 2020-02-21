@@ -1,5 +1,5 @@
 // Load Environment Variables from the .env file
-
+require("dotenv").config();
 
 // Application Dependencies
 const express = require('express');
