@@ -1,0 +1,83 @@
+
+[
+    {
+        "product_id": 1,
+        "product_name": "Lyon's Collab",
+        "description": "Collaboration with Sam Lyons",
+        "price": 1200.00,
+        "img_url": "lyons.png",
+        "type": "Functional",
+        "in_stock": true,
+        "quantity": 1
+    },     
+    {
+        "product_id": 2,
+        "product_name": "Curvy Erlflask",
+        "description": "14mm Curvy Sand Blasted Erlenmeyer Flask",
+        "price": 420.00,
+        "img_url": "curvyFlask.png",
+        "type": "Functional",
+        "in_stock": true,
+        "quantity": 5
+    },     
+    {
+        "product_id": 3,
+        "product_name": "Puffco Top",
+        "description": "Top for a Puffco Peak",
+        "price": 1000.00,
+        "img_url": "pufco.png",
+        "type": "Functional",
+        "in_stock": true,
+        "quantity": 3
+    },    
+    {
+        "product_id": 4,
+        "product_name": "Blue Test Tube Pendant",
+        "description": "3.5\" Test Tube Pendant",
+        "price": 150.00,
+        "img_url": "blue_testTube.png",
+        "type": "Functional",
+        "in_stock": true,
+        "quantity": 20
+    },    
+    {
+        "product_id": 5,
+        "product_name": "Circuit Board Pendant",
+        "description": "2.5\" Circuit Board Pendant",
+        "price": 250.00,
+        "img_url": "circuitboard.png",
+        "type": "Pendant",
+        "in_stock": false,
+        "quantity": 0
+    },    
+    {
+        "product_id": 6,
+        "product_name": "Circuit Board Thumb Pendant",
+        "description": "2\" Circuit Board Thumbprint",
+        "price": 150.00,
+        "img_url": "circuitThumb.png",
+        "type": "Pendant",
+        "in_stock": true,
+        "quantity": 33
+    },    
+    {
+        "product_id": 7,
+        "product_name": "DMT Molecule Pendant",
+        "description": "DMT Molecule Pendant w/ Dann Hoffman",
+        "price": 600.00,
+        "img_url": "dmt.png",
+        "type": "Pendant",
+        "in_stock": false,
+        "quantity": 0
+    },
+    {
+        "product_id": 8,
+        "product_name": "Mini Erlenmeyer Flask Pendant",
+        "description": "Half inch mini pendant",
+        "price": 100.00,
+        "img_url": "mini.png",
+        "type": "Pendant",
+        "in_stock": true,
+        "quantity": 100
+    }
+]
