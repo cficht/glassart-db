@@ -12,6 +12,7 @@ async function run() {
     
         await client.query(`
             DROP TABLE IF EXISTS glass_art;
+            DROP TABLE IF EXISTS glass_type;
 
         `);
 
