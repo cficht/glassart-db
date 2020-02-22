@@ -20,7 +20,7 @@ async function run() {
         // run a query to create tables
         await client.query(`
         CREATE TABLE glass_art (
-            product_id INTEGER PRIMARY KEY NOT NULL,
+            product_id SERIAL PRIMARY KEY NOT NULL,
             product_name VARCHAR(256) NOT NULL,
             description VARCHAR(256) NOT NULL,
             price INTEGER NOT NULL,

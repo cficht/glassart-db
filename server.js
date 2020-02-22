@@ -19,8 +19,7 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(morgan('dev'));
 app.use(cors());
-
-app.use('/assets', express.static('public'));
+app.use('/assets', express.static('public')); //allows us to host images folder
 
 // API Routes
 
