@@ -17,12 +17,12 @@ async function run() {
             // map every item in the array data
             data.map(item => {
                 return client.query(`
-                INSERT INTO glass_art (product_id, product_name, description, price, img_url, type, in_stock, quantity)
-                VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
+                INSERT INTO glass_art (product_name, description, price, img_url, type, in_stock, quantity)
+                VALUES ($1, $2, $3, $4, $5, $6, $7);
                 
                 `,
                 
-                [item.product_id, item.product_name, item.description, item.price, item.img_url, item.type, item.in_stock, item.quantity]);
+                [item.product_name, item.description, item.price, item.img_url, item.type, item.in_stock, item.quantity]);
             })
         );
 
