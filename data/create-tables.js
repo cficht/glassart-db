@@ -21,7 +21,7 @@ async function run() {
         await client.query(`
         CREATE TABLE glass_type (
             type_id SERIAL PRIMARY KEY NOT NULL,
-            type VARCHAR(256) NOT NULL
+            type_name VARCHAR(256) NOT NULL
         );
 
         CREATE TABLE glass_art (

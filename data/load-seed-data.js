@@ -16,7 +16,7 @@ async function run() {
         const savedTypes = await Promise.all(
             dataType.map(async type => {
                 const result = await client.query(`
-                    INSERT INTO glass_type (type)
+                    INSERT INTO glass_type (type_name)
                     VALUES ($1)
                     RETURNING *;
                 `,
@@ -31,7 +31,7 @@ async function run() {
             // map every item in the array data
             data.map(item => {
                 const type = savedTypes.find(type => {
-                    return type.type === item.type;
+                    return type.type_name === item.type;
                 });
 
                 return client.query(`

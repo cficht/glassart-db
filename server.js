@@ -23,7 +23,7 @@ app.use(express.json()); // enable reading incoming json data
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 // API Routes
 
-app.get('/api/data', async (req, res) => {
+app.get('/api/products', async (req, res) => {
     try {
         const result = await client.query(`
             SELECT
@@ -44,7 +44,7 @@ app.get('/api/data', async (req, res) => {
     }
 });
 
-app.post('/api/data', async (req, res) => {
+app.post('/api/products', async (req, res) => {
     try {
         console.log(req.body);
         const result = await client.query(`
@@ -63,7 +63,7 @@ app.post('/api/data', async (req, res) => {
     }
 });
 
-app.get('/api/data/:myGlassId/', async (req, res) => {
+app.get('/api/product/:myGlassId/', async (req, res) => {
     try {
         const result = await client.query(`
             SELECT *
