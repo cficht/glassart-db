@@ -31,8 +31,6 @@ async function run() {
             // map every item in the array data
             data.map(item => {
                 const type = savedTypes.find(type => {
-                    // console.log(type.type);
-                    console.log(item.type);
                     return type.type === item.type;
                 });
 

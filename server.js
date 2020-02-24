@@ -13,7 +13,6 @@ const Client = pg.Client;
 const client = new Client(process.env.DATABASE_URL);
 client.connect();
 
-
 // Application Setup
 const app = express();
 const PORT = process.env.PORT;
@@ -98,8 +97,9 @@ app.get('/api/types', async (req, res) => {
     }
 });
 
-// http method and path...
-
+app.get('*', (req, res) => {
+    res.send('404 error...');
+});
 
 // Start the server
 // (use PORT from .env!)
