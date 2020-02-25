@@ -63,6 +63,24 @@ app.post('/api/products', async (req, res) => {
     }
 });
 
+app.post('/api/types', async (req, res) => {
+    try {
+        console.log(req.body);
+        const result = await client.query(`
+        INSERT INTO glass_type (type_name)
+        VALUES ($1)
+        RETURNING *;
+        `,
+        [req.body.type_name]
+        );
+        res.json(result.rows[0]);
+    } catch (err) {
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
+
 app.put('/api/products', async (req, res) => {
     try {
         console.log(req.body);
