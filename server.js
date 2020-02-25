@@ -107,6 +107,23 @@ app.get('/api/product/:myGlassId/', async (req, res) => {
     }
 });
 
+app.delete('/api/product/:myGlassId', async (req, res) => {
+    try {
+        const result = await client.query(`
+            DELETE FROM glass_art
+            WHERE glass_art.product_id=$1`,
+        [req.params.myGlassId]);
+
+        res.json(result.rows);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
+
 app.get('/api/types', async (req, res) => {
     try {
         const result = await client.query(`
