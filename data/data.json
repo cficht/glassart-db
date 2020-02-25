@@ -3,7 +3,7 @@
         "product_name": "Lyon's Collab",
         "description": "Collaboration with Sam Lyons",
         "price": 1200,
-        "img_url": "lyons.png",
+        "img_url": "https://cryptic-journey-67632.herokuapp.com/assets/lyons.png",
         "type": "Functional",
         "in_stock": true,
         "quantity": 1
@@ -12,7 +12,7 @@
         "product_name": "Curvy Erlflask",
         "description": "14mm Curvy Sand Blasted Erlenmeyer Flask",
         "price": 420,
-        "img_url": "curvyFlask.png",
+        "img_url": "https://cryptic-journey-67632.herokuapp.com/assets/curvyFlask.png",
         "type": "Functional",
         "in_stock": true,
         "quantity": 5
@@ -21,7 +21,7 @@
         "product_name": "Puffco Top",
         "description": "Top for a Puffco Peak",
         "price": 1000,
-        "img_url": "puffco.png",
+        "img_url": "https://cryptic-journey-67632.herokuapp.com/assets/puffco.png",
         "type": "Functional",
         "in_stock": true,
         "quantity": 3
@@ -30,7 +30,7 @@
         "product_name": "Blue Test Tube Pendant",
         "description": "3.5\" Test Tube Pendant",
         "price": 150,
-        "img_url": "blue_testTube.png",
+        "img_url": "https://cryptic-journey-67632.herokuapp.com/assets/blue_testTube.png",
         "type": "Pendant",
         "in_stock": true,
         "quantity": 20
@@ -39,7 +39,7 @@
         "product_name": "Circuit Board Pendant",
         "description": "2.5\" Circuit Board Pendant",
         "price": 250,
-        "img_url": "circuitboard.png",
+        "img_url": "https://cryptic-journey-67632.herokuapp.com/assets/circuitboard.png",
         "type": "Pendant",
         "in_stock": false,
         "quantity": 0
@@ -48,7 +48,7 @@
         "product_name": "Circuit Board Thumb Pendant",
         "description": "2\" Circuit Board Thumbprint",
         "price": 150,
-        "img_url": "circuitThumb.png",
+        "img_url": "https://cryptic-journey-67632.herokuapp.com/assets/circuitThumb.png",
         "type": "Pendant",
         "in_stock": true,
         "quantity": 33
@@ -57,7 +57,7 @@
         "product_name": "DMT Molecule Pendant",
         "description": "DMT Molecule Pendant w/ Dann Hoffman",
         "price": 600,
-        "img_url": "dmt.png",
+        "img_url": "https://cryptic-journey-67632.herokuapp.com/assets/dmt.png",
         "type": "Pendant",
         "in_stock": false,
         "quantity": 0
@@ -66,7 +66,7 @@
         "product_name": "Mini Erlenmeyer Flask Pendant",
         "description": "Half inch mini pendant",
         "price": 100,
-        "img_url": "mini.png",
+        "img_url": "https://cryptic-journey-67632.herokuapp.com/assets/mini.png",
         "type": "Pendant",
         "in_stock": true,
         "quantity": 100

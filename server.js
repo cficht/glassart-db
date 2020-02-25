@@ -21,8 +21,8 @@ app.use(cors());
 app.use('/assets', express.static('public')); //allows us to host images folder
 app.use(express.json()); // enable reading incoming json data
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-// API Routes
 
+// API Routes
 app.get('/api/products', async (req, res) => {
     try {
         const result = await client.query(`
