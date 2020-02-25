@@ -63,6 +63,34 @@ app.post('/api/products', async (req, res) => {
     }
 });
 
+app.put('/api/products', async (req, res) => {
+    try {
+        console.log(req.body);
+        
+        const result = await client.query(`
+            UPDATE glass_art
+            SET product_name = $1,
+				description = $2,
+				price = $3,
+				img_url = $4,
+				type_id = $5,
+                in_stock = $6,
+                quantity = $7
+            WHERE product_id = $8;
+        `,
+        [req.body.product_name, req.body.description, req.body.price, req.body.img_url, req.body.type_id, req.body.in_stock, req.body.quantity, req.body.product_id]
+        );
+
+        res.json(result.rows[0]);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
+
 app.get('/api/product/:myGlassId/', async (req, res) => {
     try {
         const result = await client.query(`
