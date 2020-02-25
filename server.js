@@ -8,6 +8,7 @@ const morgan = require('morgan');
 const pg = require('pg');
 
 console.log(process.env);
+
 // Database Client
 const Client = pg.Client;
 const client = new Client(process.env.DATABASE_URL);
@@ -18,9 +19,9 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(morgan('dev'));
 app.use(cors());
-app.use('/assets', express.static('public')); //allows us to host images folder
-app.use(express.json()); // enable reading incoming json data
-app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use('/assets', express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // API Routes
 app.get('/api/products', async (req, res) => {
@@ -33,9 +34,7 @@ app.get('/api/products', async (req, res) => {
             ON glass_art.type_id = glass_type.type_id
             ORDER BY glass_art.product_id;
         `);
-
         console.log(result.rows);
-
         res.json(result.rows);
     } catch (err) {
         res.status(500).json({
@@ -52,7 +51,6 @@ app.post('/api/products', async (req, res) => {
         VALUES ($1, $2, $3, $4, $5, $6, $7)
         RETURNING *;
         `,
-
         [req.body.product_name, req.body.description, req.body.price, req.body.img_url, req.body.type_id, req.body.in_stock, req.body.quantity]
         );
         res.json(result.rows[0]);
@@ -83,8 +81,7 @@ app.post('/api/types', async (req, res) => {
 
 app.put('/api/products', async (req, res) => {
     try {
-        console.log(req.body);
-        
+        console.log(req.body);        
         const result = await client.query(`
             UPDATE glass_art
             SET product_name = $1,
@@ -98,7 +95,6 @@ app.put('/api/products', async (req, res) => {
         `,
         [req.body.product_name, req.body.description, req.body.price, req.body.img_url, req.body.type_id, req.body.in_stock, req.body.quantity, req.body.product_id]
         );
-
         res.json(result.rows[0]);
     }
     catch (err) {
@@ -116,7 +112,6 @@ app.get('/api/product/:myGlassId/', async (req, res) => {
             FROM glass_art
             WHERE glass_art.product_id=$1`,
         [req.params.myGlassId]);
-
         res.json(result.rows);
     } catch (err) {
         res.status(500).json({
@@ -131,7 +126,6 @@ app.delete('/api/product/:myGlassId', async (req, res) => {
             DELETE FROM glass_art
             WHERE glass_art.product_id=$1`,
         [req.params.myGlassId]);
-
         res.json(result.rows);
     }
     catch (err) {
@@ -149,9 +143,7 @@ app.get('/api/types', async (req, res) => {
             FROM glass_type
             ORDER BY type_id;
         `);
-
         console.log(result.rows);
-
         res.json(result.rows);
     } catch (err) {
         res.status(500).json({
@@ -163,10 +155,6 @@ app.get('/api/types', async (req, res) => {
 app.get('*', (req, res) => {
     res.send('404 error...');
 });
-
-// Start the server
-// (use PORT from .env!)
-// const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
     console.log('server running on PORT', PORT);

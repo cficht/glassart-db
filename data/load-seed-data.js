@@ -1,7 +1,6 @@
 require('dotenv').config();
 const pg = require('pg');
 const Client = pg.Client;
-// import seed data:
 const data = require('./data.json');
 const dataType = require('./productType.json');
 
@@ -26,9 +25,7 @@ async function run() {
             })
         );
     
-        // "Promise all" does a parallel execution of async tasks
         await Promise.all(
-            // map every item in the array data
             data.map(item => {
                 const type = savedTypes.find(type => {
                     return type.type_name === item.type;
@@ -43,9 +40,6 @@ async function run() {
                 [item.product_name, item.description, item.price, item.img_url, type.type_id, item.in_stock, item.quantity]);
             })
         );
-
-        // console.log(type)
-
         console.log('seed data load complete');
     }
     catch (err) {
